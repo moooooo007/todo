@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo/bottomsheet.dart';
 import 'package:todo/tabs/listtab.dart';
 import 'package:todo/tabs/settingtab.dart';
 
@@ -25,7 +26,9 @@ class _homeState extends State<home> {
       ),
       body:  tab[currentindex],
       floatingActionButton: FloatingActionButton(
-          onPressed: (){},
+          onPressed: (){
+            showtodobottomsheet();
+          },
           child: Icon(Icons.add),
         backgroundColor: Colors.green,
         elevation: 14,
@@ -35,9 +38,7 @@ class _homeState extends State<home> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.miniCenterDocked,
       bottomNavigationBar:
-            Theme(
-        data: Theme.of(context).copyWith(canvasColor: Colors.white),
-            child: BottomAppBar(
+            BottomAppBar(
               notchMargin: 8,
               clipBehavior: Clip.hardEdge,
               shape: CircularNotchedRectangle(),
@@ -60,7 +61,13 @@ class _homeState extends State<home> {
           ],
         ),
             ),
-      ),
+
     );
+  }
+
+  void showtodobottomsheet() {
+    showModalBottomSheet(context: context, builder: (context){
+      return bottomsheet();
+    });
   }
 }
