@@ -18,7 +18,7 @@ class _homeState extends State<home> {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.green,
-        title: Text(
+        title: const Text(
           "To Do",
           style: TextStyle(
               fontSize: 25, fontWeight: FontWeight.bold, color: Colors.white),
@@ -29,10 +29,10 @@ class _homeState extends State<home> {
           onPressed: (){
             showtodobottomsheet();
           },
-          child: Icon(Icons.add),
+          child: const Icon(Icons.add),
         backgroundColor: Colors.green,
         elevation: 14,
-         shape: StadiumBorder(
+         shape: const StadiumBorder(
           side: BorderSide(color: Colors.white,width: 4)
       ),
       ),
@@ -41,7 +41,7 @@ class _homeState extends State<home> {
             BottomAppBar(
               notchMargin: 8,
               clipBehavior: Clip.hardEdge,
-              shape: CircularNotchedRectangle(),
+              shape: const CircularNotchedRectangle(),
               child: BottomNavigationBar(
           onTap: (currenttab) {
               currentindex = currenttab;
@@ -49,14 +49,14 @@ class _homeState extends State<home> {
           },
           selectedItemColor: Colors.green,
           selectedLabelStyle:
-                const TextStyle(color: Colors.green, fontWeight: FontWeight.bold),
+          const TextStyle(color: Colors.green, fontWeight: FontWeight.bold),
           selectedIconTheme: const IconThemeData(color: Colors.green),
           unselectedIconTheme: const IconThemeData(color: Colors.black),
           currentIndex: currentindex,
           items: [
-              BottomNavigationBarItem(
+              const BottomNavigationBarItem(
                   icon: Icon(Icons.list), label: "Menu"),
-              BottomNavigationBarItem(
+              const BottomNavigationBarItem(
                   icon: Icon(Icons.settings), label: "Setting"),
           ],
         ),
