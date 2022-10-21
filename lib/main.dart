@@ -1,13 +1,19 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/adapters.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:todo/SplashScreen.dart';
 import 'package:todo/home.dart';
-import 'package:firebase_core/firebase_core.dart';
 
 
-Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(  );
-  runApp(ToDo());
+ main()async {
+   WidgetsFlutterBinding.ensureInitialized();
+   Directory Path = await getApplicationDocumentsDirectory();
+   await Hive.initFlutter(Path.path);
+   Hive.openBox("TODO");
+   runApp (const ToDo());
 }
 
 class ToDo extends StatelessWidget {

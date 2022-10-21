@@ -7,7 +7,7 @@ static const  routename = "SplashScreen";
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        children: [
+        children: const [
 
         ],
       ),

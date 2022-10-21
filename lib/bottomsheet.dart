@@ -18,24 +18,24 @@ final _formkey = GlobalKey<FormState>();
     return Container(
       height: double.infinity,
       decoration: BoxDecoration(
-          color: Colors.greenAccent, borderRadius: BorderRadius.circular(20)),
-      padding: EdgeInsets.all(2),
-      margin: EdgeInsets.all(10),
+          color: Colors.white, borderRadius: BorderRadius.circular(30)),
+      padding: const EdgeInsets.all(2),
+      margin: const EdgeInsets.all(10),
       child: Form(
         key: _formkey,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 5,
             ),
-            Text(
+            const Text(
               "Add New Task",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               textAlign: TextAlign.center,
             ),
-            SizedBox(
+            const SizedBox(
               height: 8,
             ),
             Expanded(
@@ -50,15 +50,16 @@ final _formkey = GlobalKey<FormState>();
                     if(text==null||text.isEmpty){
                       return "Enter your Corect Title";
                     }
+                    return null;
                   },
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                       hintText: "Enter Your Title",
                       border: OutlineInputBorder(),
                       suffixIcon: Icon(Icons.edit)),
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 8,
             ),
             Expanded(
@@ -74,18 +75,19 @@ final _formkey = GlobalKey<FormState>();
                     if(text==null||text.isEmpty){
                       return "Enter your Corect Description";
                     }
+                    return null;
                   },
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                       hintText: "Enter Your Description",
                       border: OutlineInputBorder(),
                       suffixIcon: Icon(Icons.edit_attributes)),
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 8,
             ),
-            Text(
+            const Text(
               "Select Date:",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
               textAlign: TextAlign.start,
@@ -101,7 +103,7 @@ final _formkey = GlobalKey<FormState>();
                   },
                   child: Text(
                     "${selectedate.year}/${selectedate.month}/${selectedate.day}",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                     textAlign: TextAlign.center,
                   )),
             ),
@@ -110,10 +112,10 @@ final _formkey = GlobalKey<FormState>();
                 onPressed: () {
                   addtodo();
                 },
-                child: Icon(Icons.save),
+                child: const Icon(Icons.save),
                 backgroundColor: Colors.green,
                 elevation: 6,
-                shape: StadiumBorder(
+                shape: const StadiumBorder(
                     side: BorderSide(color: Colors.white, width: 4)),
               ),
             ),

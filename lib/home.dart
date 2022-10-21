@@ -53,10 +53,10 @@ class _homeState extends State<home> {
           selectedIconTheme: const IconThemeData(color: Colors.green),
           unselectedIconTheme: const IconThemeData(color: Colors.black),
           currentIndex: currentindex,
-          items: [
-              const BottomNavigationBarItem(
+          items: const [
+              BottomNavigationBarItem(
                   icon: Icon(Icons.list), label: "Menu"),
-              const BottomNavigationBarItem(
+              BottomNavigationBarItem(
                   icon: Icon(Icons.settings), label: "Setting"),
           ],
         ),
