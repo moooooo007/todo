@@ -6,12 +6,14 @@ import 'package:hive_flutter/adapters.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:todo/SplashScreen.dart';
 import 'package:todo/home.dart';
+import 'package:todo/model/todobox.dart';
 
 
  main()async {
    WidgetsFlutterBinding.ensureInitialized();
    Directory Path = await getApplicationDocumentsDirectory();
    await Hive.initFlutter(Path.path);
+   Hive.registerAdapter(todoboxAdapter());
    Hive.openBox("TODO");
    runApp (const ToDo());
 }
